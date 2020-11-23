@@ -73,7 +73,7 @@ class ModelMonitor:
             
         return arr_out
         
-    def evaluate(self, *arrs):
+    def evaluate(self, *arrs, labels=None):
         
         if len(arrs) == 2:
             x1, x2 = arrs
@@ -100,3 +100,10 @@ class ModelMonitor:
                 raise ValueError(
                     "Arrays must be of the same dimension and either 1 or 2 dimensions!"
                 )
+
+    def set_labels(self, labels, sep="_"):
+        self.labels = labels
+        self.sep = sep
+
+    def set_subset(self, subset):
+        self.subset = subset
