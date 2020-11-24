@@ -72,4 +72,4 @@ mm.evaluate(df, groupby='group')
 # V4  0.097102  0.075041  0.139569  0.124033
 # V5  0.069333  0.099172  0.114340  0.132053
 ```
-
+Note that the labels are sorted in alphabetical order. Allowing for custom orderings via a pd.Categorical is a TODO.
