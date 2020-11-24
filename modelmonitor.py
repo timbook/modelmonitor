@@ -73,8 +73,7 @@ class ModelMonitor:
             
         return arr_out
         
-    def evaluate(self, *arrs, labels=None):
-        
+    def evaluate(self, *arrs, groupby=None, labels=None):
         if len(arrs) == 2:
             x1, x2 = arrs
             
@@ -100,6 +99,13 @@ class ModelMonitor:
                 raise ValueError(
                     "Arrays must be of the same dimension and either 1 or 2 dimensions!"
                 )
+
+        elif len(arrs) == 1 and groupby:
+            arr = arrs[0]
+            grps = np.sort(arr[groupby].unique()).tolist()
+            data_split = [df[1].drop(columns=groupby) for df in arr.groupby(groupby)]
+            self.set_labels(grps)
+            return self.evaluate(*data_split)
 
     def set_labels(self, labels, sep="_"):
         self.labels = labels
