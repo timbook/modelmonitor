@@ -74,6 +74,8 @@ class ModelMonitor:
         return arr_out
         
     def evaluate(self, *arrs, groupby=None, labels=None):
+        if labels:
+            self.set_labels(labels)
         if len(arrs) == 2:
             x1, x2 = arrs
             
