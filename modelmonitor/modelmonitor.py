@@ -95,6 +95,8 @@ class ModelMonitor:
                 return self.evaluate_1dim_many(arrs)
                 
             elif all(np.array(arr).ndim == 2 for arr in arrs):
+                if labels:
+                    self.set_labels(labels)
                 return self.evaluate_2dim_many(arrs)
             
             else:

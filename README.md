@@ -61,6 +61,8 @@ from scipy.stats import wasserstein_distance
 
 from modelmonitor import ModelMonitor
 
+mm = ModelMonitor(metric=wasserstein_distance)
+
 np.random.seed(42)
 df = pd.DataFrame(np.random.randn(1000, 5), columns=['V1', 'V2', 'V3', 'V4', 'V5'])
 df['group'] = np.random.choice(list("ABCDE") , size=1000, replace=True)
