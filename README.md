@@ -44,7 +44,7 @@ mm.evaluate(X, Z)
 # dtype: float64
 
 mm.evaluate(X, Y, Z, labels=list('XYZ'))
-        # X_Y       Y_Z
+#         X_Y       Y_Z
 # 0  0.127148  0.117008
 # 1  0.206939  0.245297
 # 2  0.179723  0.119153
@@ -64,7 +64,7 @@ np.random.seed(42)
 df = pd.DataFrame(np.random.randn(1000, 5), columns=list('ABCDE'))
 df['group'] = np.random.choice(['A', 'B', 'C', 'D'], size=1000, replace=True)
 mm.evaluate(df, groupby='group')
-        # A_B       B_C       C_D
+#         A_B       B_C       C_D
 # A  0.066709  0.080742  0.219649
 # B  0.090407  0.155144  0.137199
 # C  0.135637  0.099173  0.153390
