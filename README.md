@@ -43,7 +43,8 @@ mm.evaluate(X, Z)
 # 4    0.356038
 # dtype: float64
 
-mm.evaluate(X, Y, Z, labels=list('XYZ'))
+mm.set_labels(list('XYZ'))
+mm.evaluate(X, Y, Z)
 #         X_Y       Y_Z
 # 0  0.127148  0.117008
 # 1  0.206939  0.245297
