@@ -62,14 +62,14 @@ from scipy.stats import wasserstein_distance
 from modelmonitor import ModelMonitor
 
 np.random.seed(42)
-df = pd.DataFrame(np.random.randn(1000, 5), columns=list('ABCDE'))
-df['group'] = np.random.choice(['A', 'B', 'C', 'D'], size=1000, replace=True)
+df = pd.DataFrame(np.random.randn(1000, 5), columns=['V1', 'V2', 'V3', 'V4', 'V5'])
+df['group'] = np.random.choice(list("ABCDE") , size=1000, replace=True)
 mm.evaluate(df, groupby='group')
-#         A_B       B_C       C_D
-# A  0.066709  0.080742  0.219649
-# B  0.090407  0.155144  0.137199
-# C  0.135637  0.099173  0.153390
-# D  0.127743  0.095118  0.084503
-# E  0.091089  0.176952  0.052983
+#          A_B       B_C       C_D       D_E
+# V1  0.136266  0.128704  0.080303  0.105263
+# V2  0.124382  0.210017  0.076414  0.138592
+# V3  0.077364  0.178851  0.148629  0.125337
+# V4  0.097102  0.075041  0.139569  0.124033
+# V5  0.069333  0.099172  0.114340  0.132053
 ```
 
